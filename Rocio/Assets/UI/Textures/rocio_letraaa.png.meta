@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rocio_letraaa_0: -7497148688684957846
+      rocio_letraaa_1: -1073167607250212666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

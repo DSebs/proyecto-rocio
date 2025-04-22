@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lluvia fondo_0: -531174451980940526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
