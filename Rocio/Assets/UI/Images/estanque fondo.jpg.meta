@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      estanque fondo_0: -5609886348829927598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
