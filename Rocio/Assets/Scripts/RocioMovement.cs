@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Threading;
+
 
 public class RocioMovement : MonoBehaviour
 {
@@ -6,20 +8,21 @@ public class RocioMovement : MonoBehaviour
     public float fuerzaSalto;
     public LayerMask suelo;
     private Rigidbody2D rigidbody;
-    private BoxCollider2D boxCollider;
+    private PolygonCollider2D boxCollider;
     private bool mirandoDerecha = true;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<PolygonCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        mover();
-        saltar();
+        float mov = mover();
 
     }
     bool estaEnSuelo()
@@ -28,18 +31,35 @@ public class RocioMovement : MonoBehaviour
         return rayCastHit2D;
     }
 
-    void mover()
+    float mover()
     {
         float InputMov = Input.GetAxis("Horizontal");
-
+        if (InputMov != 0f)
+        {
+            animator.SetBool("Moviendose",true);
+        }
+        else
+        {
+            animator.SetBool("Moviendose",false);
+        }
+        saltar(InputMov);
         rigidbody.velocity = new Vector2(InputMov * velocidad, rigidbody.velocity.y);
         cambiarDireccion(InputMov);
+        return InputMov;
     }
-    void saltar()
+    void saltar(float mov)
     {
         if (Input.GetKeyDown(KeyCode.Space) && estaEnSuelo())
         {
+            if (mov == 0f)
+            {
+                animator.SetBool("Saltando", true);
+            }
             rigidbody.AddForce(Vector2.up*fuerzaSalto,ForceMode2D.Impulse);
+        }
+        else if (estaEnSuelo())
+        {
+            animator.SetBool("Saltando", false);
         }
     }
 
