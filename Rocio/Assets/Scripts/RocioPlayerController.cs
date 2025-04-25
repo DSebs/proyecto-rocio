@@ -14,9 +14,9 @@ public class RocioPlayerController : MonoBehaviour
     // Variables para la mecánica de salto tipo Jump King
     private bool estaCargandoSalto = false;
     private float tiempoCarga = 0f;
-    private float cargaMaxima = 2f;
+    private float cargaMaxima = 1.5f;
     private float fuerzaSaltoMin = 5f;
-    private float fuerzaSaltoMax = 18f;
+    private float fuerzaSaltoMax = 15f;
     private float direccionSalto = 0f;
 
     public PhysicsMaterial2D bounceMat;
@@ -58,7 +58,8 @@ public class RocioPlayerController : MonoBehaviour
         else if (estaEnSuelo())
         {
             mover(inputMov); // solo si está en el suelo
-        }
+            animator.SetBool("Saltando", false);
+            }
         else
         {
             animator.SetBool("Moviendose", false);
@@ -114,7 +115,7 @@ void EjecutarSalto()
     // Si hay dirección horizontal, hacer el salto más largo horizontalmente
     if (direccionSalto != 0f)
     {
-        direccion = new Vector2(direccionSalto * 0.75f, 1f);
+        direccion = new Vector2(direccionSalto * 0.50f, 1f);
     }
     else
     {
