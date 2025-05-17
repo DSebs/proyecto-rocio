@@ -30,6 +30,9 @@ public class RocioPlayerController : MonoBehaviour
     private bool mirandoDerecha = true;
     private Animator animator;
 
+    // Doble salto
+    private bool dobleSaltoDisponible = false;
+
     // Variables para la mecánica de salto tipo Jump King
     private bool estaCargandoSalto = false;
     private float tiempoCarga = 0f;
@@ -142,6 +145,12 @@ public class RocioPlayerController : MonoBehaviour
                 animator.SetBool("Moviendose", false);
             }
         }
+
+        if (!enSuelo && dobleSaltoDisponible && Input.GetKeyDown(KeyCode.Space))
+        {
+        IniciarDobleSalto();
+        }
+
     }
 
     void IniciarCargaSalto(float inputMov)
@@ -156,6 +165,27 @@ public class RocioPlayerController : MonoBehaviour
         // Detener movimiento horizontal al iniciar la carga
         rigidbody.linearVelocity = new Vector2(0f, rigidbody.linearVelocity.y);
     }
+
+    void IniciarDobleSalto()
+{
+    // Mantener la velocidad horizontal, solo añadir impulso vertical
+    float fuerzaDobleSalto = (fuerzaSaltoMin + fuerzaSaltoMax) / 2f;
+
+    // Aplicar impulso hacia arriba sin cancelar velocidad actual
+    rigidbody.AddForce(Vector2.up * fuerzaDobleSalto, ForceMode2D.Impulse);
+
+    dobleSaltoDisponible = false;
+    saltando = true;
+    animator.SetBool("Saltando", true);
+
+    HUDController hud = FindObjectOfType<HUDController>();
+    if (hud != null)
+    {
+    hud.OcultarIcono();
+    }
+}
+
+
 
     void EjecutarSalto()
     {
@@ -264,5 +294,12 @@ public class RocioPlayerController : MonoBehaviour
             Gizmos.DrawLine(checkPointRight.position, checkPointRight.position + Vector3.down * rayLength);
         }
     }
+
+    public void ActivarDobleSalto()
+    {
+    dobleSaltoDisponible = true;
+    }
+
+
 }
 
