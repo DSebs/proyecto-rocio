@@ -18,10 +18,6 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject); // Persistente entre escenas
         }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void Start()
