@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class RocioPlayerController : MonoBehaviour
 {
@@ -33,6 +35,18 @@ public class RocioPlayerController : MonoBehaviour
     // Doble salto
     private bool dobleSaltoDisponible = false;
 
+    //Dash
+    [Header("Dash Config")]
+    public float fuerzaDash = 12f;
+    public float duracionDash = 0.2f;
+
+    private bool estaDasheando = false;
+    private float gravedadOriginal;
+
+    private bool dashDisponible = false;
+
+
+
     // Variables para la mecánica de salto tipo Jump King
     private bool estaCargandoSalto = false;
     private float tiempoCarga = 0f;
@@ -59,6 +73,8 @@ public class RocioPlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
+
+        gravedadOriginal = rigidbody.gravityScale;
     }
 
     // Método para crear los puntos de verificación
@@ -153,6 +169,11 @@ public class RocioPlayerController : MonoBehaviour
         IniciarDobleSalto();
         }
 
+        if (dashDisponible && Input.GetKeyDown(KeyCode.E))
+        {
+        UsarDash();
+        }
+
     }
 
     void IniciarCargaSalto(float inputMov)
@@ -171,7 +192,7 @@ public class RocioPlayerController : MonoBehaviour
     }
 
     void IniciarDobleSalto()
-{
+    {
     // Mantener la velocidad horizontal, solo añadir impulso vertical
     float fuerzaDobleSalto = (fuerzaSaltoMin + fuerzaSaltoMax) / 2f;
 
@@ -189,58 +210,84 @@ public class RocioPlayerController : MonoBehaviour
     {
     hud.OcultarIcono();
     }
+    }
+
+void UsarDash()
+{
+    float inputDir = Input.GetAxisRaw("Horizontal");
+    if (inputDir == 0 || estaDasheando) return;
+
+    StartCoroutine(EjecutarDash(inputDir));
 }
 
 
 
-    void EjecutarSalto()
+private IEnumerator EjecutarDash(float direccion)
+{
+    estaDasheando = true;
+
+    // Cancelar toda velocidad actual y suspender gravedad
+    rigidbody.linearVelocity = Vector2.zero;
+    rigidbody.gravityScale = 0f;
+
+    // Aplicar impulso horizontal
+    rigidbody.AddForce(new Vector2(direccion, 0f) * fuerzaDash, ForceMode2D.Impulse);
+
+    // Opcional: activar animación
+    animator.SetTrigger("Dash");
+
+    // Desactivar dash en HUD
+    HUDController hud = FindObjectOfType<HUDController>();
+    if (hud != null)
     {
-        estaCargandoSalto = false;
-        saltando = true;
-        direccionCambiada = false;
-        animator.SetBool("Saltando", true);
-        animator.SetBool("Moviendose", false);
-        animator.SetBool("Cargando", false);
-        // Calcular la fuerza basada en el tiempo de carga (curva cuadrática para mejor distribución)
-        float porcentajeCarga = Mathf.Clamp01(tiempoCarga / cargaMaxima);
-        
-        // Curva cuadrática para mejor distribución de la fuerza
-        // Esto hace que el incremento sea más notorio al final de la carga
-        float porcentajeCuadratico = porcentajeCarga * porcentajeCarga;
-        float fuerzaActual = Mathf.Lerp(fuerzaSaltoMin, fuerzaSaltoMax, porcentajeCuadratico);
-
-        // Aplicar el material de rebote
-        rigidbody.sharedMaterial = bounceMat;
-        
-        // Resetear velocidad antes de aplicar la fuerza
-        rigidbody.linearVelocity = Vector2.zero;
-        
-        // Vector de dirección para el salto
-        Vector2 direccion;
-        
-        // Salto diagonal con mayor componente horizontal
-        if (direccionSalto != 0f)
-        {
-            // Crear vector con componentes X e Y ajustables
-            direccion = new Vector2(direccionSalto * factorDiagonalX, factorDiagonalY);
-            
-            // Normalizar para mantener consistencia
-            direccion = direccion.normalized;
-            
-            // Aplicar multiplicador adicional para saltos diagonales
-            fuerzaActual *= factorDiagonalFuerza;
-        }
-        else
-        {
-            direccion = Vector2.up;
-        }
-
-        // Debug para verificar la dirección y fuerza
-        Debug.Log($"Salto: Dir={direccionSalto}, Fuerza={fuerzaActual}, Vector={direccion}");
-
-        // Aplicar la fuerza como impulso
-        rigidbody.AddForce(direccion * fuerzaActual, ForceMode2D.Impulse);
+        hud.OcultarIcono();
     }
+
+    // Esperar duración del dash
+    yield return new WaitForSeconds(duracionDash);
+
+    // Restaurar gravedad
+    rigidbody.gravityScale = gravedadOriginal;
+
+    estaDasheando = false;
+    dashDisponible = false;
+}
+
+
+    void EjecutarSalto()
+{
+    estaCargandoSalto = false;
+    saltando = true;
+    direccionCambiada = false;
+    animator.SetBool("Saltando", true);
+    animator.SetBool("Moviendose", false);
+    animator.SetBool("Cargando", false);
+
+    float porcentajeCarga = Mathf.Clamp01(tiempoCarga / cargaMaxima);
+    float porcentajeCuadratico = porcentajeCarga * porcentajeCarga;
+    float fuerzaActual = Mathf.Lerp(fuerzaSaltoMin, fuerzaSaltoMax, porcentajeCuadratico);
+
+    rigidbody.sharedMaterial = bounceMat;
+    rigidbody.linearVelocity = Vector2.zero;
+
+    Vector2 direccion;
+
+    if (direccionSalto != 0f)
+    {
+        direccion = new Vector2(direccionSalto * factorDiagonalX, factorDiagonalY);
+        // Sin normalizar
+    }
+    else
+    {
+        direccion = Vector2.up;
+    }
+
+    Debug.Log($"Salto: Dir={direccionSalto}, Fuerza={fuerzaActual}, Vector={direccion}");
+    Debug.DrawRay(transform.position, direccion * fuerzaActual, Color.cyan, 1f);
+
+    rigidbody.AddForce(direccion * fuerzaActual, ForceMode2D.Impulse);
+}
+
 
     bool estaEnSuelo()
     {
@@ -306,6 +353,23 @@ public class RocioPlayerController : MonoBehaviour
     {
     dobleSaltoDisponible = true;
     }
+
+    public void ActivarDash()
+    {
+    dashDisponible = true;
+    }
+
+    public bool TieneDobleSaltoActivo()
+    {
+    return dobleSaltoDisponible;
+    }
+
+    public bool TieneItemActivo()
+{
+    return dobleSaltoDisponible || dashDisponible;
+}
+
+
 
 
 }

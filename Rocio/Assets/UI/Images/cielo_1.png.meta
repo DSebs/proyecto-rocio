@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb439ecd96303b04b866a1c4eea7446f
+guid: fb2c02cea881f3a4c819031cc5180a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5347521196869095194
-    second: nubes_2_0
+      213: -3367753850328565252
+    second: cielo_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nubes_2_0
+      name: cielo_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e0feb7cdc9c9c5b0800000000000000
-      internalID: -5347521196869095194
+      spriteID: cf9363c57b55341d0800000000000000
+      internalID: -3367753850328565252
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      nubes_2_0: -5347521196869095194
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
