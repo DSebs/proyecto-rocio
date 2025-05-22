@@ -1,22 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\",
+  "WorkspaceRootPath": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\RocioPlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,46 +34,47 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RocioPlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RocioPlayerController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioPlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\RocioPlayerController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADwAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwIAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T03:21:17.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RocioMovement.cs",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\RocioMovement.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs",
-              "RelativeToolTip": "Assets\\RocioMovement.cs",
+              "RelativeToolTip": "..\\..\\..\\proyecto-rocio\\Rocio\\Assets\\RocioMovement.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T23:37:09.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Sprite-Lit-Default.shader",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Actuales\\proyecto-rocio\\Rocio\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
               "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\2D\\Sprite-Lit-Default.shader",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-04-21T21:21:02.237Z"
+              "WhenOpened": "2025-04-21T21:21:02.237Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "RocioMovement.cs",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\RocioMovement.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\RocioMovement.cs",
+              "RelativeToolTip": "..\\..\\..\\proyecto-rocio\\Rocio\\Assets\\Scripts\\RocioMovement.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T20:59:49.966Z"
             }

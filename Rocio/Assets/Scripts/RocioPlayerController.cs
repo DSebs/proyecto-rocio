@@ -134,11 +134,13 @@ public class RocioPlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
             {
                 IniciarCargaSalto(inputMov);
+
             }
             else if (enSuelo)
             {
                 mover(inputMov);
                 animator.SetBool("Saltando", false);
+
             }
             else
             {
@@ -158,7 +160,9 @@ public class RocioPlayerController : MonoBehaviour
         estaCargandoSalto = true;
         tiempoCarga = 0f;
         direccionCambiada = false;
-        
+        animator.SetBool("Cargando", true);
+        animator.SetBool("Saltando", false);
+        animator.SetBool("Moviendose", false);
         // Capturar dirección inicial si ya se está moviendo
         direccionSalto = inputMov < 0 ? -1f : (inputMov > 0 ? 1f : 0f);
         
@@ -177,8 +181,10 @@ public class RocioPlayerController : MonoBehaviour
     dobleSaltoDisponible = false;
     saltando = true;
     animator.SetBool("Saltando", true);
+    animator.SetBool("Moviendose", false);
+    animator.SetBool("Cargando", false);
 
-    HUDController hud = FindObjectOfType<HUDController>();
+        HUDController hud = FindObjectOfType<HUDController>();
     if (hud != null)
     {
     hud.OcultarIcono();
@@ -193,7 +199,8 @@ public class RocioPlayerController : MonoBehaviour
         saltando = true;
         direccionCambiada = false;
         animator.SetBool("Saltando", true);
-
+        animator.SetBool("Moviendose", false);
+        animator.SetBool("Cargando", false);
         // Calcular la fuerza basada en el tiempo de carga (curva cuadrática para mejor distribución)
         float porcentajeCarga = Mathf.Clamp01(tiempoCarga / cargaMaxima);
         
