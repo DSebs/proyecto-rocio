@@ -210,6 +210,11 @@ public class RocioPlayerController : MonoBehaviour
     {
     hud.OcultarIcono();
     }
+
+    if (InGameAudioManager.Instance != null)
+    {
+        InGameAudioManager.Instance.PlayDobleSalto();
+    }
     }
 
 void UsarDash()
@@ -251,6 +256,11 @@ private IEnumerator EjecutarDash(float direccion)
 
     estaDasheando = false;
     dashDisponible = false;
+
+    if (InGameAudioManager.Instance != null)
+    {
+        InGameAudioManager.Instance.PlayDash();
+    }
 }
 
 
@@ -286,6 +296,12 @@ private IEnumerator EjecutarDash(float direccion)
     Debug.DrawRay(transform.position, direccion * fuerzaActual, Color.cyan, 1f);
 
     rigidbody.AddForce(direccion * fuerzaActual, ForceMode2D.Impulse);
+
+    if (InGameAudioManager.Instance != null)
+    {
+        InGameAudioManager.Instance.PlaySalto();
+    }
+
 }
 
 

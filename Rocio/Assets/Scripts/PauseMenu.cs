@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject panelPausa;
-    //public GameObject panelOpciones;
+    public GameObject panelOpciones;
     private bool juegoPausado = false;
 
     void Update()
@@ -31,13 +31,13 @@ public class PauseMenu : MonoBehaviour
 
     public void AbrirOpciones()
     {
-       // panelOpciones.SetActive(true);
-       // panelPausa.SetActive(false);
+        panelOpciones.SetActive(true);
+        panelPausa.SetActive(false);
     }
 
     public void CerrarOpciones()
     {
-        //panelOpciones.SetActive(false);
+        panelOpciones.SetActive(false);
         panelPausa.SetActive(true);
     }
 }

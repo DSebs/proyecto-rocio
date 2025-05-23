@@ -12,11 +12,10 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton para acceder desde cualquier parte
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persistente entre escenas
+            DontDestroyOnLoad(gameObject);
         }
     }
 
